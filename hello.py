@@ -1,0 +1,15 @@
+from tkinter import *
+root = Tk()
+def myclick():
+    mylabel3=Label(root,text=e.get())
+    mylabel3.grid(row=3, column=1)
+e=Entry(root,width=50)
+e.grid(row=4, column=1)
+e.insert(0,'enter your name')
+mylabel1=Label(root,text="Hello world")
+mylabel2=Label(root,text='my name is subhash')
+mybutton=Button(root,text='Click me',padx=50,command=myclick)
+mylabel1.grid(row=0,column=0)
+mylabel2.grid(row=1,column=1)
+mybutton.grid(row=2,column=1)
+root.mainloop()
