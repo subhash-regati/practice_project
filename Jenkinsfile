@@ -5,8 +5,8 @@ pipeline{
         NEW_VERSION='1.0.0.1'
     }
     parameters{
-        choice(name:'string_input',choice:['sam','ram','hari','subhash'],description:'')
-        boleanParam(name:'execute_stage',defaultValue:true,description:'')                                            
+        choice(name:'string_input',choices:['sam','ram','hari','subhash'],description:'')
+        booleanParam(name:'execute_stage',defaultValue:true,description:'')                                            
     }
     stages{
         stage('fist_stage'){
@@ -20,7 +20,7 @@ pipeline{
             steps{
                 when{
                     expession{
-                        BRANCH_NAME='master'
+                        BRANCH_NAME =='master'
                     }
                 }
             echo 'second build'
