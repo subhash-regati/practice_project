@@ -1,0 +1,22 @@
+pipeline{
+    agent any
+    stages{
+        stage('fist_stage'){
+            steps{
+            build job: 'second_job', parameters: [string(name: 'string1', value: 'sam')]
+            }
+        }
+        stage('second_stage'){
+            steps{
+            build job: 'forth_job'
+            }
+        }
+        stage('third_stage'){
+            steps{
+            build job: 'third_job'
+            }
+        }
+            
+    }  
+    
+}
