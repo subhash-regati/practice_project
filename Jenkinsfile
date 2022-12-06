@@ -9,6 +9,11 @@ pipeline{
         }
         stage('second_stage'){
             steps{
+                when{
+                    expession{
+                        BRANCH_NAME='master'
+                    }
+                }
             echo 'second build'
             build job: 'forth_job'
             }
