@@ -31,7 +31,7 @@ pipeline{
             steps{
                 when{
                     expression{
-                        param.execute_stage == 'True'
+                        params.execute_stage == true
                     }
                 }
             echo 'third build is ready'
