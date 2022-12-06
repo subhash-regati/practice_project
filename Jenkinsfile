@@ -17,14 +17,14 @@ pipeline{
             }
         }
         stage('second_stage'){
-            steps{
-                when{
+            when{
                     expession{
                         BRANCH_NAME =='master'
                     }
                 }
-            echo 'second build'
-            build job: 'forth_job'
+            steps{
+                echo 'second build'
+                build job: 'forth_job'
             }
         }
         stage('third_stage'){
