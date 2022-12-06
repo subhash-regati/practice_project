@@ -31,7 +31,7 @@ pipeline{
             steps{
                 when{
                     expression{
-                        params.execute_stage == true
+                        params.execute_stage
                     }
                 }
             echo 'third build is ready'
@@ -43,7 +43,7 @@ pipeline{
         always{
             echo 'build completed'
             echo "sever credentials ${SERVER_CREDENTIALS}"
-            echo "string name is ${param.string_input}"
+            echo "string name is ${params.string_input}"
             }
     }
 }
