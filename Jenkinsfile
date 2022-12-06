@@ -18,7 +18,7 @@ pipeline{
         }
         stage('second_stage'){
             when{
-                expession{
+                expression{
                     BRANCH_NAME =='master'
                   }    
                 }
