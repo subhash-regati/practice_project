@@ -5,7 +5,7 @@ pipeline{
         NEW_VERSION='1.0.0.1'
     }
     parameters{
-        choice(name:'string_input',choice:['sam','ram','hari','subhash],description:'')
+        choice(name:'string_input',choice:['sam','ram','hari','subhash'],description:'')
         boleanParam(name:'execute_stage',defaultValue:true,description:'')                                            
     }
     stages{
