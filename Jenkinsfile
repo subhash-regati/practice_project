@@ -11,16 +11,16 @@ pipeline{
     stages{
         stage('fist_stage'){
             steps{
-            echo "Build version :${NEW_vERSION}"
+            echo "Build version :${NEW_VERSION}"
             echo 'first build started'
             build job: 'second_job', parameters: [string(name: 'string1', value: 'sam')]
             }
         }
         stage('second_stage'){
             when{
-                    expession{
-                        BRANCH_NAME =='master'
-                    }
+                expession{
+                    BRANCH_NAME =='master'
+                  }    
                 }
             steps{
                 echo 'second build'
@@ -37,8 +37,7 @@ pipeline{
             echo 'third build is ready'
             build job: 'third_job'
             }
-        }
-            
+        }    
     }
     post{
         always{
