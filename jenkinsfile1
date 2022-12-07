@@ -11,14 +11,14 @@ pipeline{
     stages{
         stage('parllel processing'){
             parallel{
-            stage('fist_stage'){
+            stage('fist_p_stage'){
             steps{
             echo "Build version :${NEW_VERSION}"
             echo 'first build started'
             build job: 'second_job', parameters: [string(name: 'string1', value: 'sam')]
             }
         }
-        stage('second_stage'){
+        stage('second_p_stage'){
             when{
                 expression{
                     BRANCH_NAME =='master'
@@ -29,7 +29,7 @@ pipeline{
                 build job: 'third_job'
             }
         }
-        stage('third_stage'){
+        stage('third_p_stage'){
             when{
                 expression{
                     params.execute_stage
@@ -41,6 +41,16 @@ pipeline{
             }
         } 
          }
+         stage('forth_repeat_p_stage'){
+            when{
+                expression{
+                    params.execute_stage
+                  }    
+                }
+            steps{
+                echo 'third build is ready'
+                build job: 'forth_job'
+            }
         }
         
         
