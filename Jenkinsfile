@@ -24,7 +24,7 @@ pipeline{
                 }
             steps{
                 echo 'second build'
-                build job: 'forth_job'
+                build job: 'third_job'
             }
         }
         stage('third_stage'){
@@ -33,11 +33,11 @@ pipeline{
                 when{
                     expression{
           
-                        params.execute_stage
+                        BRANCH_NAME =='master'
                     }
                 }
             echo 'third build is ready'
-            build job: 'third_job'
+            build job: 'fourth_job'
             }
         }    
     }
