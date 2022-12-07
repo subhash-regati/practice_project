@@ -29,9 +29,10 @@ pipeline{
         }
         stage('third_stage'){
             steps{
+                echo 'checking codition is working'
                 when{
                     expression{
-                        echo 'checking codition is working'
+          
                         params.execute_stage
                     }
                 }
