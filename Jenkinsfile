@@ -30,7 +30,11 @@ pipeline{
         stage('third_stage'){
             steps{
                 echo 'checking codition is working'
-                
+                when{
+                expression{
+                    BRANCH_NAME =='master'
+                  }    
+                }
                 echo 'third build is ready'
                 build job: 'forth_job'
             }
