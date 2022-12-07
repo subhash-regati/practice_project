@@ -32,7 +32,7 @@ pipeline{
                 echo 'checking codition is working'
                 
                 echo 'third build is ready'
-                build job: 'fourth_job'
+                build job: 'forth_job'
             }
         }    
     }
