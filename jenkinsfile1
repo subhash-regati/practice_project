@@ -9,7 +9,8 @@ pipeline{
         booleanParam(name:'execute_stage',defaultValue:true,description:'')                                            
     }
     stages{
-        parallel{
+        stage('parllel processing'){
+            parallel{
             stage('fist_stage'){
             steps{
             echo "Build version :${NEW_VERSION}"
@@ -39,7 +40,7 @@ pipeline{
                 build job: 'forth_job'
             }
         } 
-        
+         }
         }
         
         
