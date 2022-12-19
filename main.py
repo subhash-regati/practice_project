@@ -1,16 +1,22 @@
-# This is a sample Python script.
+# import OS module
+import os
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# Get the list of all files and directories
+path = "C://Users//subhash.reddy//OneDrive - Veoneer//Desktop//subhash"
+dir_list = os.listdir(path)
 
+print("Files and directories in '", path, "' :")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# prints all files
+print(dir_list)
+for i in dir_list:
+    if i=="practice.txt":
+        path=path+"//"+i
+        f = open(path, "r")
+        print(f.read(5))
+        f.close()
+    else:
+        print("No such file exists please check again")
+f=open(path, "a")
+f.write("the file is extended")
+f.close()
